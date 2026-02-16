@@ -1,0 +1,84 @@
+#!/usr/bin/env bash
+
+set -e
+
+cmd="$1"
+shift || true
+
+case "$cmd" in
+    new)
+        project="$1"
+
+        if [ -z "$project" ]; then
+            echo "ERROR: no project name specified"
+            exit 1
+        fi
+
+        mkdir -p "$PWD/$project/src"
+        mkdir -p "$PWD/$project/include"
+        echo "project source and header directories created."
+        cat > "$PWD/$project/src/main.c" << EOF
+#include <stdio.h>
+
+int main() {
+    printf("Hello, World\n");
+    return 0;
+}
+EOF
+        echo "main file created"
+
+cat > "$PWD/$project/Makefile" << EOF
+PROJECT = $project
+
+CC = gcc
+CFLAGS = -g -Wall -Wextra -Iinclude
+
+SRC = \$(wildcard src/*.c)
+OBJ = \$(SRC:src/%.c=build/%.o)
+
+TARGET = build/\$(PROJECT)
+
+all: \$(TARGET)
+
+\$(TARGET): \$(OBJ) | build
+	\$(CC) \$(OBJ) -o \$(TARGET)
+
+build/%.o: src/%.c | build
+	\$(CC) \$(CFLAGS) -c \$< -o \$@
+
+build:
+	mkdir -p build
+
+clean:
+	rm -rf build
+EOF
+
+echo "Makefile created"
+echo "Project created succesfully"
+;;
+
+build)
+
+    if [ ! -f "Makefile" ]; then
+        echo "ERROR: makefile not found"
+        exit 1
+    fi
+    echo "building"
+    make
+    echo "built succesfully"
+    ;;
+
+run)
+
+    if [ ! -f "Makefile" ]; then
+        echo "ERROR: makefile not found"
+        exit 1
+    fi
+    echo "building..."
+    make
+    echo "built succesfully"
+    echo "running"
+    ./build/$(grep '^PROJECT' Makefile | cut -d '=' -f2 | xargs)
+    cd ..
+    ;;
+esac
