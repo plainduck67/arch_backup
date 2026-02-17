@@ -1,4 +1,5 @@
 ark
+alacritty
 clang
 chromium
 cmake
@@ -10,8 +11,6 @@ git
 gcc
 make
 jdk-openjdk
-kate
-konsole
 man-db
 man-pages
 nano

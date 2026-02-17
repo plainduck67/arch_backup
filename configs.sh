@@ -2,9 +2,9 @@ chmod +x cman
 
 sudo cp cman /bin
 
-cp Ashfall.profile ~/.local/share/konsole/
+mkdir ~/.config/alacritty
 
-cp Ashfall.colorscheme ~/.local/share/konsole/
+cp alacritty.toml ~/.config/alacritty
 
 cd ~
 
