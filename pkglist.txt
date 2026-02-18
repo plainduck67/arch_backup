@@ -23,3 +23,8 @@ bluez-utils
 base-devel
 gdb
 valgrind
+sway
+swaybg
+swayidle
+wofi
+swaylock

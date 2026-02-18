@@ -2,6 +2,10 @@ chmod +x cman
 
 sudo cp cman /bin
 
+mkdir ~/.config/sway
+
+cp config ~/.config/sway
+
 mkdir ~/.config/alacritty
 
 cp alacritty.toml ~/.config/alacritty
