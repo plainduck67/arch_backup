@@ -1,0 +1,7 @@
+su
+pacman -S sudo
+usermod -aG wheel your_username
+uncomment this line:
+    # %wheel ALL=(ALL:ALL) ALL
+so it looks like:
+    %wheel ALL=(ALL:ALL) ALL

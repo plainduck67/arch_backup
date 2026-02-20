@@ -1,0 +1,7 @@
+sudo pacman -S gnome-keyring libsecret
+paste this into /etc/pam.d/login:
+auth       optional     pam_gnome_keyring.so
+session    optional     pam_gnome_keyring.so auto_start
+
+and paste this in your sway config:
+exec_always --no-startup-id gnome-keyring-daemon --start --components=secrets,ssh
