@@ -6,6 +6,12 @@ mkdir ~/.config/sway
 
 cp config ~/.config/sway
 
+
+mkdir ~/.config/nvim
+
+cp init.lua ~/.config/nvim
+
+
 mkdir ~/.config/alacritty
 
 cp alacritty.toml ~/.config/alacritty
