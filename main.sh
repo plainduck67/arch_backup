@@ -13,7 +13,9 @@ select opt in "${options[@]}"; do
             break
             ;;
         "Set configs")
+            echo "setting configs in place"
             bash configs.sh
+            echo "completed"
             break
             ;;
         "All of the above")
