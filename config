@@ -240,7 +240,7 @@ default_border pixel 3
 gaps inner 8
 gaps outer 4
 
-client.focused          #fc0341 #fc0341 #ffffff #fc0341 #fc0341
+client.focused          #1793d1 #1793d1 #ffffff #1793d1 #1793d1
 client.unfocused        #3a3a3a #222222 #888888 #3a3a3a #3a3a3a
 
 exec_always swayidle -w \
