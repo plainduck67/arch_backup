@@ -1,7 +1,5 @@
-ark
 alacritty
 clang
-chromium
 cmake
 dolphin
 dotnet-sdk
@@ -13,9 +11,9 @@ make
 jdk-openjdk
 man-db
 man-pages
-nano
 nasm
 neovim
+vim
 networkmanager
 wget
 bluez
