@@ -1,0 +1,19 @@
+window {
+  background-color: #1793d1;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+entry {
+  color: #eceff4;
+  font-size: 16px;
+}
+
+listview {
+  color: #88c0d0;
+}
+
+listview:selected {
+  background-color: #4c566a;
+  color: #eceff4;
+}
